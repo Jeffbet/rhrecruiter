@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatar-se - RHRecruiter</title>
+    <link rel="stylesheet" href="styles/candidate.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header-wrapper">
+        <div id="menuButton" class="menu-button">☰</div>
+        <div class="logo-wrapper" onclick="location.href='/'">
+            <img src="assets/logo.jpg" alt="RHRecruiter Logo" class="logo">
+            <div class="site-name">RHRecruiter</div>
+        </div>
+        <nav id="navLinks" class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/jobs" class="nav-link">Vagas</a>
+            <div class="nav-link" onclick="window.open('https://wa.me/5583998523253', '_blank')">Contato</div>
+            <a href="/talent-pool" class="nav-link">Banco de Talentos</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <!-- Filtros -->
+        <div class="filter-wrapper">
+            <h2 class="filter-title">Filtrar Vagas</h2>
+            <div class="form-field">
+                <label for="state">Estado</label>
+                <select id="state" name="state" class="select-input">
+                    <option value="">Todos</option>
+                    <!-- Adicione outras opções de estados -->
+                </select>
+            </div>
+            <div class="form-field">
+                <label>Modalidade</label>
+                <div class="checkbox-wrapper">
+                    <label><input type="checkbox" name="workMode" value="Remoto"> Remoto</label>
+                    <label><input type="checkbox" name="workMode" value="Híbrido"> Híbrido</label>
+                    <label><input type="checkbox" name="workMode" value="Presencial"> Presencial</label>
+                </div>
+            </div>
+            <div class="form-field">
+                <label>Categoria</label>
+                <div class="checkbox-wrapper">
+                    <label><input type="checkbox" name="category" value="Tecnologia"> Tecnologia</label>
+                    <label><input type="checkbox" name="category" value="Marketing"> Marketing</label>
+                    <label><input type="checkbox" name="category" value="Design"> Design</label>
+                    <!-- Adicione mais categorias conforme necessário -->
+                </div>
+            </div>
+            <div class="form-field">
+                <label>Seniority</label>
+                <div class="checkbox-wrapper">
+                    <label><input type="checkbox" name="seniority" value="Júnior"> Júnior</label>
+                    <label><input type="checkbox" name="seniority" value="Pleno"> Pleno</label>
+                    <label><input type="checkbox" name="seniority" value="Sênior"> Sênior</label>
+                </div>
+            </div>
+            <div class="form-field">
+                <label>Data de Publicação</label>
+                <div class="checkbox-wrapper">
+                    <label><input type="checkbox" name="time" value="Últimas 24h"> Últimas 24h</label>
+                    <label><input type="checkbox" name="time" value="Últimos 7 dias"> Últimos 7 dias</label>
+                    <label><input type="checkbox" name="time" value="Últimos 30 dias"> Últimos 30 dias</label>
+                </div>
+            </div>
+            <div class="form-field">
+                <label><input type="checkbox" name="clt"> CLT</label>
+                <label><input type="checkbox" name="pj"> Contrato PJ</label>
+                <label><input type="checkbox" name="internship"> Estágio</label>
+            </div>
+            <div class="form-field">
+                <label for="searchTerm">Pesquisar Vaga</label>
+                <input type="text" id="searchTerm" name="searchTerm" class="input-field" placeholder="Digite o nome da vaga">
+            </div>
+        </div>
+
+        <!-- Lista de Vagas -->
+        <div class="job-list-wrapper">
+            <h2 class="job-list-title">Vagas Disponíveis</h2>
+            <!-- Exemplo de uma vaga, este conteúdo será gerado dinamicamente via JavaScript -->
+            <div id="jobList"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Candidatura -->
+    <div id="applyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Candidatar-se à Vaga: <span id="modalJobTitle"></span></h2>
+            <form id="applyForm">
+                <div class="form-field">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" class="input-field" required>
+                </div>
+                <div class="form-field">
+                    <label for="whatsapp">WhatsApp com DDD</label>
+                    <input type="text" id="whatsapp" name="whatsapp" class="input-field" placeholder="(99) 99999-9999" required>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="input-field" required>
+                </div>
+                <div class="form-field">
+                    <label for="resume">Anexar Currículo (PDF)</label>
+                    <input type="file" id="resume" name="resume" class="input-field" accept="application/pdf" required>
+                </div>
+                <button type="submit" class="submit-button">Enviar Candidatura</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer-wrapper">
+        <p>© 2024 RHRecruiter. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="scripts/candidate.js"></script>
+</body>
+</html>

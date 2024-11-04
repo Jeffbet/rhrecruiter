@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHRecruiter</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header-wrapper">
+        <div id="menuButton" class="menu-button">☰</div>
+        <div class="logo-wrapper" onclick="location.href='/'">
+            <img src="/assets/logo.jpg" alt="RHRecruiter Logo" class="logo">
+            <div class="site-name">RHRecruiter</div>
+        </div>
+        <nav id="navLinks" class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/candidate.html" class="nav-link">Vagas</a>
+            <div class="nav-link" onclick="window.open('https://wa.me/5583998523253', '_blank')">Contato</div>
+            <a href="/talentpool.html" class="nav-link">Banco de Talentos</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal -->
+    <div class="scroll-content">
+        <div class="home-wrapper">
+            <div class="animated-columns">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="banner reveal">
+                <h1 class="title">Bem-vindo ao RHRecruiter!</h1>
+                <h2 class="subtitle">Consultoria especializada em processos de recrutamento e seleção de profissionais para o MERCADO DE TRABALHO!</h2>
+                <div>
+                    <a href="/candidate.html" class="button">Sou candidato, procuro vagas</a>
+                    <a href="https://wa.me/5583998523253" class="button" target="_blank">Sou empresa, procuro profissionais</a>
+                </div>
+            </div>
+            <div class="background-image"></div>
+        </div>
+
+        <!-- Seções de Marketing -->
+        <div class="marketing-wrapper reveal" id="about">
+            <section class="marketing-section">
+                <h2 class="section-title"><i class="fas fa-users"></i> Quem Somos</h2>
+                <p class="section-content">
+                    Somos uma consultoria de recrutamento e seleção especializada em encontrar os melhores talentos para sua empresa.<br/>
+                    Nosso objetivo é transformar o processo de contratação, tornando-o mais eficiente e assertivo.<br/>
+                    Contamos com uma equipe de especialistas em recursos humanos que utiliza as melhores práticas e tecnologias para garantir que sua empresa encontre os profissionais ideais.
+                </p>
+                <div class="info-box-wrapper">
+                    <div class="info-box">
+                        <div class="icon-wrapper"><i class="fas fa-bullseye"></i></div>
+                        <h3>Missão</h3>
+                        <p>Proporcionar a melhor experiência de recrutamento e seleção, conectando talentos excepcionais a empresas inovadoras.</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="icon-wrapper"><i class="fas fa-eye"></i></div>
+                        <h3>Visão</h3>
+                        <p>Ser a principal consultoria em recrutamento e seleção de profissionais de tecnologia, reconhecida pela excelência e inovação.</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="icon-wrapper"><i class="fas fa-hands-helping"></i></div>
+                        <h3>Valores</h3>
+                        <p>Integridade, compromisso com resultados, inovação e respeito à diversidade.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="marketing-section">
+                <div class="highlight-box">
+                    <h2 class="section-title"><i class="fas fa-wheelchair"></i> Nosso Compromisso com a Acessibilidade</h2>
+                    <p class="section-content">
+                        Estamos comprometidos em tornar nossa plataforma acessível para todos, independentemente de suas habilidades.
+                        Utilizamos cores contrastantes para garantir que todos possam ler e entender o conteúdo.
+                        Acreditamos na equidade de valores e na importância de proporcionar um ambiente inclusivo para todos os candidatos.
+                        Cada funcionalidade foi desenvolvida pensando na melhor experiência para todos os usuários.
+                    </p>
+                </div>
+                <div class="highlight-box">
+                    <h2 class="section-title"><i class="fas fa-search"></i> Facilidade de Encontrar Vagas</h2>
+                    <p class="section-content">
+                        Nosso ATS moderno e eficiente permite que os candidatos encontrem facilmente vagas relevantes através de filtros avançados.
+                        Com apenas alguns cliques, você pode filtrar vagas por localização, categoria, tipo de emprego e muito mais.
+                        Isso garante que você encontre rapidamente as oportunidades que melhor se alinham ao seu perfil, facilitando sua jornada profissional.
+                    </p>
+                </div>
+                <div class="highlight-box">
+                    <h2 class="section-title"><i class="fas fa-star"></i> Visibilidade e Modernidade</h2>
+                    <p class="section-content">
+                        Para os recrutadores, nosso ATS oferece uma plataforma moderna com visibilidade aprimorada das candidaturas.
+                        Com ferramentas avançadas de gerenciamento de candidatos e relatórios detalhados, ajudamos a tornar o processo de recrutamento mais eficiente e eficaz.
+                        A nossa plataforma foi desenvolvida com as últimas tendências em tecnologia para garantir uma experiência de usuário superior,
+                        proporcionando um ambiente de recrutamento mais dinâmico e inovador.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Seção de Feedback -->
+        <section class="feedback-section">
+            <h2 class="section-title">Envie seu Feedback</h2>
+            <form id="feedbackForm" class="feedback-form">
+                <input type="text" class="feedback-input" placeholder="Seu Nome" required>
+                <input type="email" class="feedback-input" placeholder="Seu Email" required>
+                <textarea class="feedback-textarea" placeholder="Seu Feedback" required></textarea>
+                <button type="submit" class="feedback-button">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="footer-wrapper">
+            <p>© 2024 RHRecruiter. Todos os direitos reservados.</p>
+        </footer>
+
+        <!-- Botão de Voltar ao Topo -->
+        <button id="scrollToTopBtn" onclick="scrollToTop()">⬆</button>
+    </div>
+
+    <!-- Modal de Agradecimento -->
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Obrigado pelo seu feedback!</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/scripts/index.js"></script>
+</body>
+</html>
