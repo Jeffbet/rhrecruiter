@@ -3,104 +3,57 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             jobTitle: "Desenvolvedor Backend",
             jobDescription: "O Desenvolvedor Backend será responsável por desenvolver e manter a lógica de servidor, bancos de dados e integração com APIs. Requisitos incluem experiência com Node.js, MongoDB, e implementação de microservices.",
-            jobLocation: ["Rio de Janeiro"],
-            jobWorkMode: ["Híbrido"],
-            jobBenefits: ["Vale Refeição", "Plano de Saúde", "Gympass"],
-            jobType: ["Contrato PJ"],
+            jobLocation: "Rio de Janeiro",
+            jobWorkMode: "Híbrido",
+            jobType: "Contrato PJ",
             jobSalary: "R$ 9000,00",
-            jobCategory: ["Tecnologia"],
-            companyName: "Innovative Solutions",
-            createdDate: "05/07/2024"
-        },
-        {
-            jobTitle: "Analista de Service Desk",
-            jobDescription: "Ser responsável pelo atendimento aos usuários da plataforma pelos canais, chat e e-mail...",
-            jobLocation: ["Minas Gerais"],
-            jobWorkMode: ["Home Office"],
-            jobBenefits: ["Vale Refeição", "Plano de Saúde", "Gympass"],
-            jobType: ["Contrato PJ"],
-            jobSalary: "R$ 2000,00",
-            jobCategory: ["Tecnologia"],
-            companyName: "Innovative Solutions",
+            jobCategory: "Tecnologia",
             createdDate: "05/07/2024"
         },
         {
             jobTitle: "Analista de Marketing",
-            jobDescription: "O Analista de Marketing será responsável por desenvolver e executar estratégias de marketing digital...",
-            jobLocation: ["São Paulo"],
-            jobWorkMode: ["Presencial"],
-            jobBenefits: ["Vale Refeição", "Vale Transporte", "Plano Odontológico"],
-            jobType: ["CLT"],
+            jobDescription: "O Analista de Marketing será responsável por desenvolver e executar estratégias de marketing digital.",
+            jobLocation: "São Paulo",
+            jobWorkMode: "Presencial",
+            jobType: "CLT",
             jobSalary: "R$ 5000,00",
-            jobCategory: ["Marketing"],
-            companyName: "Market Leaders",
+            jobCategory: "Marketing",
             createdDate: "10/07/2024"
-        },
-        // Adicione outras vagas conforme necessário...
+        }
     ];
 
-    const jobList = document.getElementById('jobList');
+    const jobDetailWrapper = document.getElementById('jobDetailWrapper');
+    const jobDetailContent = document.getElementById('jobDetailContent');
 
-    initialJobs.forEach(job => {
-        const jobWrapper = document.createElement('div');
-        jobWrapper.className = 'job-wrapper';
-
-        const jobTitle = document.createElement('h3');
-        jobTitle.className = 'job-title';
-        jobTitle.textContent = job.jobTitle;
-        jobTitle.addEventListener('click', () => openModal(job.jobTitle));
-        jobWrapper.appendChild(jobTitle);
-
-        const jobDetails = document.createElement('div');
-        jobDetails.className = 'job-details';
-
-        const jobDescription = document.createElement('p');
-        jobDescription.textContent = job.jobDescription;
-        jobDetails.appendChild(jobDescription);
-
-        const jobLocation = document.createElement('p');
-        jobLocation.textContent = `Localização: ${job.jobLocation.join(', ')}`;
-        jobDetails.appendChild(jobLocation);
-
-        const jobSalary = document.createElement('p');
-        jobSalary.textContent = `Salário: ${job.jobSalary}`;
-        jobDetails.appendChild(jobSalary);
-
-        jobWrapper.appendChild(jobDetails);
-        jobList.appendChild(jobWrapper);
-    });
-
-    const applyModal = document.getElementById('applyModal');
-    const modalJobTitle = document.getElementById('modalJobTitle');
-    const closeButton = document.querySelector('.close-button');
-    const applyForm = document.getElementById('applyForm');
-
-    function openModal(jobTitle) {
-        modalJobTitle.textContent = jobTitle;
-        applyModal.style.display = 'block';
+    function renderJobDetail(job) {
+        jobDetailContent.innerHTML = `
+            <div class="job-title">${job.jobTitle}</div>
+            <div class="job-info"><strong>Localização:</strong> ${job.jobLocation}</div>
+            <div class="job-info"><strong>Modalidade:</strong> ${job.jobWorkMode}</div>
+            <div class="job-info"><strong>Descrição:</strong> ${job.jobDescription}</div>
+            <div class="job-info"><strong>Salário:</strong> ${job.jobSalary}</div>
+            <div class="job-info"><strong>Tipo de Vaga:</strong> ${job.jobType}</div>
+            <button class="apply-button" onclick="openModal('${job.jobTitle}')">Candidatar-se</button>
+            <div class="share-icons">
+                <a href="#"><i class="fab fa-whatsapp share-icon"></i></a>
+                <a href="#"><i class="fab fa-facebook-f share-icon"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in share-icon"></i></a>
+                <a href="#"><i class="fab fa-instagram share-icon"></i></a>
+            </div>
+        `;
     }
 
-    function closeModal() {
-        applyModal.style.display = 'none';
+    // Render the first job by default
+    if (initialJobs.length > 0) {
+        renderJobDetail(initialJobs[0]);
     }
 
-    closeButton.addEventListener('click', closeModal);
-
-    window.onclick = function(event) {
-        if (event.target == applyModal) {
-            applyModal.style.display = 'none';
-        }
+    window.openModal = function(jobTitle) {
+        document.getElementById('modalJobTitle').textContent = jobTitle;
+        document.getElementById('applyModal').style.display = 'block';
     };
 
-    applyForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Sua candidatura foi enviada com sucesso!');
-        closeModal();
-        applyForm.reset();
-    });
-
-    // Exemplo de uso de ScrollReveal
-    ScrollReveal().reveal('.job-wrapper', { delay: 200 });
-    ScrollReveal().reveal('.filter-wrapper', { delay: 300 });
-    ScrollReveal().reveal('.job-list-title', { delay: 400 });
+    window.closeModal = function() {
+        document.getElementById('applyModal').style.display = 'none';
+    };
 });

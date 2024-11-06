@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidatar-se - RHRecruiter</title>
     <link rel="stylesheet" href="styles/candidate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <!-- Cabeçalho -->
     <header class="header-wrapper">
-        <div id="menuButton" class="menu-button">☰</div>
         <div class="logo-wrapper" onclick="location.href='/'">
             <img src="assets/LOGO 2.jpg" alt="RHRecruiter Logo" class="logo">
             <div class="site-name">RHRecruiter</div>
         </div>
+        <div id="menuButton" class="menu-button" onclick="toggleMenu()">☰</div>
         <nav id="navLinks" class="nav-links">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/jobs" class="nav-link">Vagas</a>
-            <div class="nav-link" onclick="window.open('https://wa.me/5583998523253', '_blank')">Contato</div>
-            <a href="/talent-pool" class="nav-link">Banco de Talentos</a>
+            <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="/jobs" class="nav-link"><i class="fas fa-briefcase"></i> Vagas</a>
+            <a href="https://wa.me/5583998523253" class="nav-link" target="_blank"><i class="fas fa-phone"></i> Contato</a>
+            <a href="/talent-pool" class="nav-link"><i class="fas fa-users"></i> Banco de Talentos</a>
         </nav>
     </header>
 
@@ -31,58 +32,104 @@
                 <label for="state">Estado</label>
                 <select id="state" name="state" class="select-input">
                     <option value="">Todos</option>
-                    <!-- Adicione outras opções de estados -->
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                    <!-- Continue adicionando os outros estados -->
                 </select>
             </div>
-            <div class="form-field">
-                <label>Modalidade</label>
-                <div class="checkbox-wrapper">
-                    <label><input type="checkbox" name="workMode" value="Remoto"> Remoto</label>
-                    <label><input type="checkbox" name="workMode" value="Híbrido"> Híbrido</label>
-                    <label><input type="checkbox" name="workMode" value="Presencial"> Presencial</label>
+            <div class="form-group-horizontal">
+                <div class="form-field">
+                    <label>Modalidade</label>
+                    <div class="checkbox-wrapper-horizontal">
+                        <label><input type="checkbox" name="workMode" value="Remoto"> Remoto</label>
+                        <label><input type="checkbox" name="workMode" value="Híbrido"> Híbrido</label>
+                        <label><input type="checkbox" name="workMode" value="Presencial"> Presencial</label>
+                    </div>
                 </div>
-            </div>
-            <div class="form-field">
-                <label>Categoria</label>
-                <div class="checkbox-wrapper">
-                    <label><input type="checkbox" name="category" value="Tecnologia"> Tecnologia</label>
-                    <label><input type="checkbox" name="category" value="Marketing"> Marketing</label>
-                    <label><input type="checkbox" name="category" value="Design"> Design</label>
-                    <!-- Adicione mais categorias conforme necessário -->
-                </div>
-            </div>
-            <div class="form-field">
-                <label>Seniority</label>
-                <div class="checkbox-wrapper">
-                    <label><input type="checkbox" name="seniority" value="Júnior"> Júnior</label>
-                    <label><input type="checkbox" name="seniority" value="Pleno"> Pleno</label>
-                    <label><input type="checkbox" name="seniority" value="Sênior"> Sênior</label>
-                </div>
-            </div>
-            <div class="form-field">
-                <label>Data de Publicação</label>
-                <div class="checkbox-wrapper">
-                    <label><input type="checkbox" name="time" value="Últimas 24h"> Últimas 24h</label>
-                    <label><input type="checkbox" name="time" value="Últimos 7 dias"> Últimos 7 dias</label>
-                    <label><input type="checkbox" name="time" value="Últimos 30 dias"> Últimos 30 dias</label>
+                <div class="form-field">
+                    <label>Senioridade</label>
+                    <div class="checkbox-wrapper-horizontal">
+                        <label><input type="checkbox" name="seniority" value="Júnior"> Júnior</label>
+                        <label><input type="checkbox" name="seniority" value="Pleno"> Pleno</label>
+                        <label><input type="checkbox" name="seniority" value="Sênior"> Sênior</label>
+                    </div>
                 </div>
             </div>
             <div class="form-field">
                 <label><input type="checkbox" name="clt"> CLT</label>
                 <label><input type="checkbox" name="pj"> Contrato PJ</label>
                 <label><input type="checkbox" name="internship"> Estágio</label>
+                <label><input type="checkbox" name="pcd"> Vagas para PCD</label>
             </div>
             <div class="form-field">
                 <label for="searchTerm">Pesquisar Vaga</label>
                 <input type="text" id="searchTerm" name="searchTerm" class="input-field" placeholder="Digite o nome da vaga">
             </div>
+            <button class="filter-button" onclick="applyFilter()">Aplicar Filtro</button>
         </div>
 
         <!-- Lista de Vagas -->
-        <div class="job-list-wrapper">
-            <h2 class="job-list-title">Vagas Disponíveis</h2>
-            <!-- Exemplo de uma vaga, este conteúdo será gerado dinamicamente via JavaScript -->
-            <div id="jobList"></div>
+        <div class="job-detail-wrapper" id="jobDetailWrapper">
+            <!-- Título Principal da Página -->
+            <h2 class="job-detail-title">Vagas Disponíveis</h2>
+            <!-- Primeira Vaga -->
+            <div class="job-detail-content">
+                <h3 class="job-title">Desenvolvedor Backend</h3>
+                <div class="published-date">Publicado em: 05/11/2024</div>
+                <div class="job-section">
+                    <div class="job-label">Localização:</div>
+                    <p>Rio de Janeiro</p>
+                </div>
+                <div class="job-section">
+                    <div class="job-label">Modalidade:</div>
+                    <p>Híbrido</p>
+                </div>
+                <div class="job-section">
+                    <div class="job-label">Descrição:</div>
+                    <p>O Desenvolvedor Backend será responsável por desenvolver e manter a lógica de servidor, bancos de dados e integração com APIs. Requisitos incluem experiência com Node.js, MongoDB, e implementação de microservices.</p>
+                </div>
+                <div class="job-section">
+                    <div class="job-label">Requisitos:</div>
+                    <ul class="job-requirements">
+                        <li>Graduação Completa</li>
+                        <li>Experiência Prévia</li>
+                        <li>Conhecimento em Node.js</li>
+                        <li>Banco de Dados MongoDB</li>
+                        <li>Desenvolvimento de APIs RESTful</li>
+                    </ul>
+                </div>
+                <div class="job-section">
+                    <div class="job-label">Benefícios:</div>
+                    <ul class="job-benefits">
+                        <li>Vale Refeição</li>
+                        <li>Plano de Saúde</li>
+                        <li>Gympass</li>
+                    </ul>
+                </div>
+                <div class="job-section">
+                    <div class="job-label">Tipo de Vaga:</div>
+                    <p>Contrato PJ</p>
+                </div>
+                <div class="job-section">
+                    <div class="job-label">Salário:</div>
+                    <p>R$ 9000,00</p>
+                </div>
+                <div class="job-section">
+                    <div class="job-label">Categoria:</div>
+                    <p>Tecnologia</p>
+                </div>
+                <div class="button-wrapper">
+                    <button class="apply-button" onclick="openModal('Desenvolvedor Backend')">Candidatar-se</button>
+                    <div class="share-icons">
+                        <a href="https://wa.me/?text=Confira esta vaga de Desenvolvedor Backend na RHRecruiter" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://rh-recruiter.com" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rh-recruiter.com&title=Confira%20esta%20vaga%20de%20Desenvolvedor%20Backend" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram share-icon instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Separação entre vagas -->
+            <hr class="job-separator">
         </div>
     </div>
 
@@ -105,6 +152,12 @@
                     <input type="email" id="email" name="email" class="input-field" required>
                 </div>
                 <div class="form-field">
+                    <label for="linkedin">Linkedin</label>
+                    <input type="email" id="linkedin" name="linkedin" class="input-field" required>
+                </div>
+
+
+                <div class="form-field">
                     <label for="resume">Anexar Currículo (PDF)</label>
                     <input type="file" id="resume" name="resume" class="input-field" accept="application/pdf" required>
                 </div>
@@ -119,6 +172,25 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="scripts/candidate.js"></script>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+
+        function openModal(jobTitle) {
+            document.getElementById('modalJobTitle').innerText = jobTitle;
+            document.getElementById('applyModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('applyModal').style.display = 'none';
+        }
+
+        function applyFilter() {
+            // Lógica para aplicar os filtros na página
+            alert('Filtros aplicados.');
+        }
+    </script>
 </body>
 </html>
