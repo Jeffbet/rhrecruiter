@@ -10,18 +10,22 @@
 <body>
     <!-- Cabeçalho -->
     <header class="header-wrapper">
-        <div id="menuButton" class="menu-button">☰</div>
+        <div id="menuButton" class="menu-button" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="logo-wrapper" onclick="location.href='/'">
             <img src="/assets/logo.jpg" alt="RHRecruiter Logo" class="logo">
             <div class="site-name">RHRecruiter</div>
         </div>
         <nav id="navLinks" class="nav-links">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/candidate.html" class="nav-link">Vagas</a>
-            <div class="nav-link" onclick="window.open('https://wa.me/5583996219812', '_blank')">Contato</div>
-            <a href="/talentpool.html" class="nav-link">Banco de Talentos</a>
+            <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="/candidate.html" class="nav-link"><i class="fas fa-briefcase"></i> Vagas</a>
+            <a href="https://wa.me/5583996219812" class="nav-link" target="_blank"><i class="fas fa-phone"></i> Contato</a>
+            <a href="/talentpool.html" class="nav-link"><i class="fas fa-users"></i> Banco de Talentos</a>
         </nav>
+        
     </header>
+    
 
     <!-- Seção Principal -->
     <div class="scroll-content">
@@ -38,7 +42,7 @@
                 <h2 class="subtitle">Consultoria especializada em processos de recrutamento e seleção de profissionais para o MERCADO DE TRABALHO!</h2>
                 <div>
                     <a href="/candidate.html" class="button">Sou candidato, procuro vagas</a>
-                    <a href="https://wa.me/5583998523253" class="button" target="_blank">Sou empresa, procuro profissionais</a>
+                    <a href="https://wa.me/5583996219812" class="button" target="_blank">Sou empresa, procuro profissionais</a>
                 </div>
             </div>
             <div class="background-image"></div>
@@ -79,7 +83,6 @@
                         Estamos comprometidos em tornar nossa plataforma acessível para todos, independentemente de suas habilidades.
                         Utilizamos cores contrastantes para garantir que todos possam ler e entender o conteúdo.
                         Acreditamos na equidade de valores e na importância de proporcionar um ambiente inclusivo para todos os candidatos.
-                        Cada funcionalidade foi desenvolvida pensando na melhor experiência para todos os usuários.
                     </p>
                 </div>
                 <div class="highlight-box">
@@ -87,7 +90,6 @@
                     <p class="section-content">
                         Nosso ATS moderno e eficiente permite que os candidatos encontrem facilmente vagas relevantes através de filtros avançados.
                         Com apenas alguns cliques, você pode filtrar vagas por localização, categoria, tipo de emprego e muito mais.
-                        Isso garante que você encontre rapidamente as oportunidades que melhor se alinham ao seu perfil, facilitando sua jornada profissional.
                     </p>
                 </div>
                 <div class="highlight-box">
@@ -95,23 +97,10 @@
                     <p class="section-content">
                         Para os recrutadores, nosso ATS oferece uma plataforma moderna com visibilidade aprimorada das candidaturas.
                         Com ferramentas avançadas de gerenciamento de candidatos e relatórios detalhados, ajudamos a tornar o processo de recrutamento mais eficiente e eficaz.
-                        A nossa plataforma foi desenvolvida com as últimas tendências em tecnologia para garantir uma experiência de usuário superior,
-                        proporcionando um ambiente de recrutamento mais dinâmico e inovador.
                     </p>
                 </div>
             </section>
         </div>
-
-        <!-- Seção de Feedback -->
-        <section class="feedback-section">
-            <h2 class="section-title">Envie seu Feedback</h2>
-            <form id="feedbackForm" class="feedback-form">
-                <input type="text" class="feedback-input" placeholder="Seu Nome" required>
-                <input type="email" class="feedback-input" placeholder="Seu Email" required>
-                <textarea class="feedback-textarea" placeholder="Seu Feedback" required></textarea>
-                <button type="submit" class="feedback-button">Enviar</button>
-            </form>
-        </section>
 
         <!-- Rodapé -->
         <footer class="footer-wrapper">
@@ -122,15 +111,12 @@
         <button id="scrollToTopBtn" onclick="scrollToTop()">⬆</button>
     </div>
 
-    <!-- Modal de Agradecimento -->
-    <div id="thankYouModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p>Obrigado pelo seu feedback!</p>
-        </div>
-    </div>
-
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="/scripts/index.js"></script>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
