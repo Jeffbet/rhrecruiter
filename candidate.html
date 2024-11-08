@@ -32,8 +32,34 @@
                 <label for="state">Estado</label>
                 <select id="state" name="state" class="select-input">
                     <option value="">Todos</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="SP">São Paulo</option>
+<option value="AC">Acre</option>
+<option value="AL">Alagoas</option>
+<option value="AP">Amapá</option>
+<option value="AM">Amazonas</option>
+<option value="BA">Bahia</option>
+<option value="CE">Ceará</option>
+<option value="DF">Distrito Federal</option>
+<option value="ES">Espírito Santo</option>
+<option value="GO">Goiás</option>
+<option value="MA">Maranhão</option>
+<option value="MT">Mato Grosso</option>
+<option value="MS">Mato Grosso do Sul</option>
+<option value="MG">Minas Gerais</option>
+<option value="PA">Pará</option>
+<option value="PB">Paraíba</option>
+<option value="PR">Paraná</option>
+<option value="PE">Pernambuco</option>
+<option value="PI">Piauí</option>
+<option value="RJ">Rio de Janeiro</option>
+<option value="RN">Rio Grande do Norte</option>
+<option value="RS">Rio Grande do Sul</option>
+<option value="RO">Rondônia</option>
+<option value="RR">Roraima</option>
+<option value="SC">Santa Catarina</option>
+<option value="SP">São Paulo</option>
+<option value="SE">Sergipe</option>
+<option value="TO">Tocantins</option>
+
                     <!-- Continue adicionando os outros estados -->
                 </select>
             </div>
@@ -133,12 +159,21 @@
         </div>
     </div>
 
+    <!-- Modal de Mensagem de Sucesso -->
+    <div id="responseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeResponseModal()">&times;</span>
+            <p id="responseMessage"></p>
+        </div>
+    </div>
+
     <!-- Modal de Candidatura -->
     <div id="applyModal" class="modal">
         <div class="modal-content">
             <span class="close-button" onclick="closeModal()">&times;</span>
             <h2>Candidatar-se à Vaga: <span id="modalJobTitle"></span></h2>
-            <form id="applyForm">
+            <form id="applyForm" method="POST" action="processar_candidatura.php" enctype="multipart/form-data">
+                <input type="hidden" name="vaga" value="Desenvolvedor Backend">
                 <div class="form-field">
                     <label for="name">Nome</label>
                     <input type="text" id="name" name="name" class="input-field" required>
@@ -152,11 +187,9 @@
                     <input type="email" id="email" name="email" class="input-field" required>
                 </div>
                 <div class="form-field">
-                    <label for="linkedin">Linkedin</label>
-                    <input type="email" id="linkedin" name="linkedin" class="input-field" required>
+                    <label for="linkedin">LinkedIn</label>
+                    <input type="text" id="linkedin" name="linkedin" class="input-field" required>
                 </div>
-
-
                 <div class="form-field">
                     <label for="resume">Anexar Currículo (PDF)</label>
                     <input type="file" id="resume" name="resume" class="input-field" accept="application/pdf" required>
@@ -187,9 +220,23 @@
             document.getElementById('applyModal').style.display = 'none';
         }
 
+        function closeResponseModal() {
+            document.getElementById("responseModal").style.display = "none";
+        }
+
         function applyFilter() {
             // Lógica para aplicar os filtros na página
             alert('Filtros aplicados.');
+        }
+
+        // Exibir mensagem de sucesso em um modal se existir na URL
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('message')) {
+                const message = params.get('message');
+                document.getElementById('responseMessage').innerText = message;
+                document.getElementById('responseModal').style.display = "block";
+            }
         }
     </script>
 </body>
