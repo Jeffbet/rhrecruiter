@@ -25,6 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $linkedin = $_POST['linkedin'];
     $curriculo = $_FILES['resume'];
 
+     // Verificar se o e-mail já está registrado
+     $check_email_sql = "SELECT * FROM candidates WHERE email='$email'";
+     $check_email_result = $conn->query($check_email_sql);
+
     // Criar diretório para a vaga específica dentro de 'uploads'
     $vaga_slug = str_replace(' ', '_', strtolower($vaga));
     $upload_dir = 'uploads/' . $vaga_slug . '/';

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Talentos - RHRecruiter</title>
+    <link rel="stylesheet" href="styles/talentpool.css">
+</head>
+<body>
+
+        <!-- Cabeçalho -->
+        <header class="header-wrapper">
+            <div class="logo-wrapper" onclick="location.href='/'">
+                <img src="assets/LOGO 2.jpg" alt="RHRecruiter Logo" class="logo">
+                <div class="site-name">RHRecruiter</div>
+            </div>
+            <div id="menuButton" class="menu-button" onclick="toggleMenu()">☰</div>
+            <nav id="navLinks" class="nav-links">
+                <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="/jobs" class="nav-link"><i class="fas fa-briefcase"></i> Vagas</a>
+                <a href="https://wa.me/5583996219812" class="nav-link" target="_blank"><i class="fas fa-phone"></i> Contato</a>
+                <a href="/talentpool.html" class="nav-link"><i class="fas fa-users"></i> Banco de Talentos</a>
+            </nav>
+        </header>
+
+    <!-- Container principal -->
+    <div class="container">
+        <div class="form-wrapper">
+            <h2 class="form-title">Cadastrar no Banco de Talentos</h2>
+            <form id="talentPoolForm" action="process_talentpool.php" method="POST" enctype="multipart/form-data">
+                <div class="form-field">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-field">
+                    <label for="whatsapp">WhatsApp com DDD</label>
+                    <input type="text" id="whatsapp" name="whatsapp" placeholder="(99) 99999-9999" required>
+                </div>
+                <div class="form-field">
+                    <label for="state">Estado</label>
+                <select id="state" name="state" class="select-input">
+                    <option value="">Todos</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+                </div>
+                <div class="form-field">
+                    <label for="jobTitle">Cargo Pretendido</label>
+                    <select id="jobTitle" name="jobTitle" required>
+                        <option value="">Selecione o cargo</option>
+                        <!-- Tecnologia -->
+                        <option value="Desenvolvedor Front-end">Desenvolvedor Front-end</option>
+                        <option value="Desenvolvedor Back-end">Desenvolvedor Back-end</option>
+                        <option value="Desenvolvedor Full Stack">Desenvolvedor Full Stack</option>
+                        <option value="Analista de Dados">Analista de Dados</option>
+                        <option value="Engenheiro de Software">Engenheiro de Software</option>
+                        <option value="Administrador de Sistemas">Administrador de Sistemas</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="Cientista de Dados">Cientista de Dados</option>
+                        <option value="Engenheiro de Machine Learning">Engenheiro de Machine Learning</option>
+                        <option value="Administrador de Banco de Dados">Administrador de Banco de Dados</option>
+                        <option value="Analista de Suporte Técnico">Analista de Suporte Técnico</option>
+                        <option value="Service Desk">Service Desk</option>
+                        
+                        <!-- Marketing -->
+                        <option value="Analista de Marketing">Analista de Marketing</option>
+                        <option value="Assistente de Marketing">Assistente de Marketing</option>
+                        <option value="Gerente de Marketing">Gerente de Marketing</option>
+                        <option value="Especialista em SEO">Especialista em SEO</option>
+                
+                        <!-- Recursos Humanos -->
+                        <option value="Analista de Recursos Humanos">Analista de Recursos Humanos</option>
+                        <option value="Assistente de Recursos Humanos">Assistente de Recursos Humanos</option>
+                        <option value="Gerente de Recursos Humanos">Gerente de Recursos Humanos</option>
+                        <option value="Recrutador">Recrutador</option>
+                
+                        <!-- Administração -->
+                        <option value="Assistente Administrativo">Assistente Administrativo</option>
+                        <option value="Analista Administrativo">Analista Administrativo</option>
+                        <option value="Gerente Administrativo">Gerente Administrativo</option>
+                        <option value="Secretária Executiva">Secretária Executiva</option>
+                
+                        <!-- Financeiro -->
+                        <option value="Analista Financeiro">Analista Financeiro</option>
+                        <option value="Assistente Financeiro">Assistente Financeiro</option>
+                        <option value="Gerente Financeiro">Gerente Financeiro</option>
+                        <option value="Contador">Contador</option>
+                
+                        <!-- Outros Cargos Operacionais -->
+                        <option value="Vendedor">Vendedor</option>
+                        <option value="Operador de Caixa">Operador de Caixa</option>
+                        <option value="Atendente de Call Center">Atendente de Call Center</option>
+                        <option value="Motorista">Motorista</option>
+                        <option value="Auxiliar de Serviços Gerais">Auxiliar de Serviços Gerais</option>
+                        <option value="Designer Gráfico">Designer Gráfico</option>
+                        <option value="Atendente de Loja">Atendente de Loja</option>
+                    </select>
+                </div>
+                
+                <div class="form-field">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="isPCD" name="isPCD">
+                        Sou PCD (Pessoa com Deficiência)
+                    </label>
+                </div>
+                <div class="form-field">
+                    <label for="resume">Anexar Currículo (PDF)</label>
+                    <input type="file" id="resume" name="resume" accept="application/pdf" required>
+                </div>
+                <button type="submit" class="submit-button">Cadastrar no Banco de Talentos</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2>Cadastro realizado com sucesso!</h2>
+            <button id="closeModal" class="close-button">Fechar</button>
+        </div>
+    </div>
+
+    <script src="scripts/talentpool.js"></script>
+</body>
+</html>
