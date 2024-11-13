@@ -35,7 +35,7 @@ body, html {
 }
 
 .logo {
-    height: 50px;
+    height: 40px;
     margin-right: 10px;
 }
 
@@ -407,4 +407,32 @@ body, html {
     .nav-links {
         top: 60px;
     }
+}
+
+/* Conteúdo da paginação */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination-wrapper button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background: #5da8ae;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination-wrapper button:disabled {
+    background: #4f4f4f;
+    cursor: not-allowed;
+}
+
+.pagination-wrapper span {
+    font-size: 16px;
+    color: #fff;
 }

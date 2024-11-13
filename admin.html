@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AdminLTE - Gestão de Vagas</title>
+        <!-- AdminLTE CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/admin.css">
+    </head>
+    <body class="hold-transition sidebar-mini">
+    
+<!-- Tela de Login -->
+<div id="loginContainer" class="login-container">
+    <div class="login-header">
+        <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="RHRecruiter Logo" class="login-logo">
+        <h1 class="company-name">RHRecruiter</h1>
+        <h3 class="sub-title">Recrutamento e Seleção</h3>
+    </div>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-field">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" class="input-field" required>
+        </div>
+        <div class="form-field password-field">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" class="input-field" required>
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+        <button type="submit" class="submit-button btn btn-primary">Entrar</button>
+    </form>
+
+    <script>
+        // usuário e senha para acesso
+        const validUsername = "adminrecruiter";
+        const validPassword = "91085467Jl";
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === validUsername && password === validPassword) {
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+                loadJobs();
+            } else {
+                alert('Usuário ou senha inválidos');
+            }
+        }
+    </script>
+
+</div>
+
+<!-- Painel Administrativo -->
+<div id="adminDashboard" class="wrapper" style="display: none;">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Admin Dashboard</a>
+            </li>
+        </ul>
+        <button onclick="handleLogout()" class="btn btn-danger ml-auto">Logout</button>
+    </nav>
+
+
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="#" class="brand-link">
+        <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+        <span class="brand-text font-weight-light">RHRecruiter</span>
+    </a>
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-briefcase"></i>
+                        <p>Gerenciar Vagas</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="candidate.html" class="nav-link">
+                        <i class="nav-icon fas fa-eye"></i>
+                        <p>Visualizar Vagas no Site</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Gerenciar Usuários</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>Relatórios e Estatísticas</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Content Header -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Cadastro de Vagas</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Cadastrar/Editar Vaga</h3>
+                    </div>
+                    <form id="jobForm">
+                        <div class="card-body">
+                            <input type="hidden" id="jobId">
+                            <div class="form-group">
+                                <label for="jobTitle">Título da Vaga</label>
+                                <input type="text" id="jobTitle" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state">Estado</label>
+                                <select id="state" class="form-control" required>
+                                    <option value="">Selecione</option>
+                                    <!-- Lista completa de estados -->
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="workMode">Modalidade</label>
+                                <select id="workMode" class="form-control" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Remoto">Remoto</option>
+                                    <option value="Híbrido">Híbrido</option>
+                                    <option value="Presencial">Presencial</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="requirements">Requisitos da Vaga</label>
+                                <textarea id="requirements" name="requirements" class="form-control" rows="3" placeholder="Ex.: Experiência em Java, Node.js" required></textarea>
+                            </div>
+                            
+
+                            <div class="form-group">
+                                <label for="seniority">Senioridade</label>
+                                <select id="seniority" class="form-control" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Júnior">Júnior</option>
+                                    <option value="Pleno">Pleno</option>
+                                    <option value="Sênior">Sênior</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contractType">Tipo de Contrato</label>
+                                <select id="contractType" class="form-control" required>
+                                    <option value="">Selecione</option>
+                                    <option value="CLT">CLT</option>
+                                    <option value="PJ">Contrato PJ</option>
+                                    <option value="Estágio">Estágio</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="salary">Pretensão Salarial</label>
+                                <input type="text" id="salary" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="benefits">Benefícios</label>
+                                <textarea id="benefits" name="benefits" class="form-control" rows="3" placeholder="Ex.: Vale Transporte, Plano de Saúde" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Categoria</label>
+                                <input type="text" id="category" name="category" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Descrição da Vaga</label>
+                                <textarea id="description" name="description" class="form-control" rows="5" placeholder="Descrição detalhada da vaga" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="pcd">PCD (Pessoa com Deficiência)</label>
+                                <select id="pcd" class="form-control" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">Não</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Cadastrar Vaga</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Lista de Vagas -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Vagas Cadastradas</h3>
+                    </div>
+                    <div class="card-body">
+                        <table id="jobList" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Estado</th>
+                                    <th>Modalidade</th>
+                                    <th>Requisitos da Vaga</th>
+                                    <th>Pretensão Salarial</th>
+                                    <th>Senioridade</th>
+                                    <th>Contrato</th>
+                                    <th>Salário</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Vagas serão adicionadas dinamicamente aqui -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- jQuery (Importado primeiro) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- AdminLTE JS -->
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+    function handleLogout() {
+        document.getElementById('adminDashboard').style.display = 'none';
+        document.getElementById('loginContainer').style.display = 'block';
+    }
+
+// Aqui vamos integrar o painel AdminLTE com sua API
+// Integrar com a API
+document.addEventListener("DOMContentLoaded", () => {
+    loadJobs();
+});
+
+$("#jobForm").on("submit", function(event) {
+    event.preventDefault();
+
+ // Coletar dados do formulário
+    const jobId = $("#jobId").val();
+    const jobTitle = $("#jobTitle").val();
+    const state = $("#state").val();
+    const workMode = $("#workMode").val();
+    const seniority = $("#seniority").val();
+    const contractType = $("#contractType").val();
+    const salary = $("#salary").val();
+    const benefits = $("#benefits").val();
+    const category = $("#category").val();
+    const description = $("#description").val();
+    const requirements = $("#requirements").val();
+    const pcd = $("#pcd").val();
+
+    const jobData = {
+        id: jobId,
+        jobTitle,
+        state,
+        workMode,
+        seniority,
+        contractType,
+        salary,
+        benefits,
+        category,
+        description,
+        requirements,
+        pcd
+    };
+
+// Se tiver um ID, atualiza. Caso contrário, cria uma nova vaga.
+if (jobId) {
+    $.ajax({
+        url: "/vagas_api.php",
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(jobData),
+        success: function(response) {
+            alert("Vaga atualizada com sucesso!");
+            loadJobs();
+        },
+        error: function(err) {
+            alert("Erro ao atualizar a vaga: " + err.responseText);
+        }
+    });
+} else {
+    $.ajax({
+        url: "/vagas_api.php",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(jobData),
+        success: function(response) {
+            alert("Vaga cadastrada com sucesso!");
+            loadJobs();
+        },
+        error: function(err) {
+            alert("Erro ao cadastrar a vaga: " + err.responseText);
+        }
+    });
+}
+$("#jobForm")[0].reset();
+});
+
+
+
+
+function loadJobs() {
+    $.ajax({
+        url: "/vagas_api.php",
+        method: "GET",
+        success: function(response) {
+            const jobs = response;
+            const jobList = $("#jobList tbody");
+            jobList.empty();
+
+            jobs.forEach((job) => {
+                jobList.append(`
+                    <tr>
+                        <td>${job.titulo}</td>
+                        <td>${job.estado}</td>
+                        <td>${job.modalidade}</td>
+                        <td>${job.senioridade}</td>
+                        <td>${job.tipo_contrato}</td>
+                        <td>${job.salario}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" onclick="editJob(${job.id})">Editar</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteJob(${job.id})">Excluir</button>
+                        </td>
+                    </tr>
+                `);
+            });
+        },
+        error: function(err) {
+            alert("Erro ao carregar as vagas: " + err.responseText);
+        }
+    });
+}
+
+function editJob(id) {
+    $.ajax({
+        url: `/vagas_api.php?id=${id}`,
+        method: "GET",
+        success: function(job) {
+            $("#jobId").val(job.id);
+            $("#jobTitle").val(job.titulo);
+            // Preencher outros campos...
+        },
+        error: function(err) {
+            alert("Erro ao carregar a vaga: " + err.responseText);
+        }
+    });
+}
+
+function deleteJob(id) {
+    if (confirm("Tem certeza que deseja excluir essa vaga?")) {
+        $.ajax({
+            url: "/vagas_api.php",
+            method: "DELETE",
+            contentType: "application/json",
+            data: JSON.stringify({ id }),
+            success: function(response) {
+                alert("Vaga excluída com sucesso!");
+                loadJobs();
+            },
+            error: function(err) {
+                alert("Erro ao excluir a vaga: " + err.responseText);
+            }
+        });
+    }
+}
+</script>
+</body>
+</html>

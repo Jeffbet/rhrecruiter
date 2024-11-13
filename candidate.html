@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidatar-se - RHRecruiter</title>
     <link rel="stylesheet" href="styles/candidate.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Cabeçalho -->
     <header class="header-wrapper">
         <div class="logo-wrapper" onclick="location.href='/'">
-            <img src="assets/LOGO 2.jpg" alt="RHRecruiter Logo" class="logo">
+            <img src="assets/LOGO4.png" alt="RHRecruiter Logo" class="logo">
             <div class="site-name">RHRecruiter</div>
         </div>
         <div id="menuButton" class="menu-button" onclick="toggleMenu()">☰</div>
         <nav id="navLinks" class="nav-links">
             <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
-            <a href="/jobs" class="nav-link"><i class="fas fa-briefcase"></i> Vagas</a>
+            <a href="/candidate.html" class="nav-link"><i class="fas fa-briefcase"></i> Vagas</a> <!-- Ajustado para evitar o redirecionamento incorreto -->
             <a href="https://wa.me/5583998523253" class="nav-link" target="_blank"><i class="fas fa-phone"></i> Contato</a>
             <a href="/talentpool.html" class="nav-link"><i class="fas fa-users"></i> Banco de Talentos</a>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <div class="container">
+     <!-- Conteúdo Principal -->
+     <div class="container">
         <!-- Filtros -->
         <div class="filter-wrapper">
             <h2 class="filter-title">Filtrar Vagas</h2>
@@ -32,33 +32,33 @@
                 <label for="state">Estado</label>
                 <select id="state" name="state" class="select-input">
                     <option value="">Todos</option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
+                    <option value="Acre">Acre</option>
+                    <option value="Alagoas">Alagoas</option>
+                    <option value="Amapá">Amapá</option>
+                    <option value="Amazonas">Amazonas</option>
+                    <option value="Bahia">Bahia</option>
+                    <option value="Ceará">Ceará</option>
+                    <option value="Distrito Federal">Distrito Federal</option>
+                    <option value="Espírito Santo">Espírito Santo</option>
+                    <option value="Goiás">Goiás</option>
+                    <option value="Maranhão">Maranhão</option>
+                    <option value="Mato Grosso">Mato Grosso</option>
+                    <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                    <option value="Minas Gerais">Minas Gerais</option>
+                    <option value="Pará">Pará</option>
+                    <option value="Paraíba">Paraíba</option>
+                    <option value="Paraná">Paraná</option>
+                    <option value="Pernambuco">Pernambuco</option>
+                    <option value="Piauí">Piauí</option>
+                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                    <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                    <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                    <option value="Rondônia">Rondônia</option>
+                    <option value="Roraima">Roraima</option>
+                    <option value="Santa Catarina">Santa Catarina</option>
+                    <option value="São Paulo">São Paulo</option>
+                    <option value="Sergipe">Sergipe</option>
+                    <option value="Tocantins">Tocantins</option>
                 </select>
             </div>
             <div class="form-group-horizontal">
@@ -95,366 +95,14 @@
         <!-- Lista de Vagas -->
         <div class="job-detail-wrapper" id="jobDetailWrapper">
             <h2 class="job-detail-title">Vagas Disponíveis</h2>
-
-            <!--vagas-->
-            <!-- Nova Vaga - Analista de Suporte Técnico -->
-<div class="job-detail-content" data-state="SP" data-workmode="Presencial" data-seniority="Júnior" data-contract="clt" data-category="Tecnologia" data-pcd="false">
-    <h3 class="job-title">Analista de Suporte Técnico</h3>
-    <div class="published-date">Publicado em: 10/11/2024</div>
-    <div class="job-section">
-        <div class="job-label">Localização:</div>
-        <p>São Paulo</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Modalidade:</div>
-        <p>Presencial</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Senioridade:</div>
-        <p>Júnior</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Pretensão Salarial:</div>
-        <p>R$ 3.500,00</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Benefícios:</div>
-        <ul class="job-benefits">
-            <li>Vale Transporte</li>
-            <li>Vale Refeição</li>
-            <li>Plano de Saúde</li>
-        </ul>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Tipo de Vaga:</div>
-        <p>CLT</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Categoria:</div>
-        <p>Tecnologia</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">PCD:</div>
-        <p>Não</p>
-    </div>
-    <div class="button-wrapper">
-        <button class="apply-button" onclick="openModal('Analista de Suporte Técnico')">Candidatar-se</button>
-        <div class="share-icons">
-            <a href="https://wa.me/?text=Confira esta vaga de Analista de Suporte Técnico na RHRecruiter" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://rh-recruiter.com" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rh-recruiter.com&title=Confira%20esta%20vaga%20de%20Analista%20de%20Suporte%20Técnico" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram share-icon instagram"></i></a>
+            <!-- Conteúdo dinâmico das vagas -->
         </div>
-    </div>
-</div>
 
-<!-- Nova Vaga - Designer Gráfico -->
-<div class="job-detail-content" data-state="RJ" data-workmode="Remoto" data-seniority="Pleno" data-contract="pj" data-category="Design" data-pcd="false">
-    <h3 class="job-title">Designer Gráfico</h3>
-    <div class="published-date">Publicado em: 10/11/2024</div>
-    <div class="job-section">
-        <div class="job-label">Localização:</div>
-        <p>Rio de Janeiro</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Modalidade:</div>
-        <p>Remoto</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Senioridade:</div>
-        <p>Pleno</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Pretensão Salarial:</div>
-        <p>R$ 4.000,00</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Benefícios:</div>
-        <ul class="job-benefits">
-            <li>Horário Flexível</li>
-            <li>Vale Alimentação</li>
-            <li>Auxílio Internet</li>
-        </ul>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Tipo de Vaga:</div>
-        <p>Contrato PJ</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Categoria:</div>
-        <p>Design</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">PCD:</div>
-        <p>Não</p>
-    </div>
-    <div class="button-wrapper">
-        <button class="apply-button" onclick="openModal('Designer Gráfico')">Candidatar-se</button>
-        <div class="share-icons">
-            <a href="https://wa.me/?text=Confira esta vaga de Designer Gráfico na RHRecruiter" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://rh-recruiter.com" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rh-recruiter.com&title=Confira%20esta%20vaga%20de%20Designer%20Gráfico" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram share-icon instagram"></i></a>
-        </div>
-    </div>
-</div>
-
-<!-- Nova Vaga - Atendente de Loja -->
-<div class="job-detail-content" data-state="MG" data-workmode="Presencial" data-seniority="Júnior" data-contract="clt" data-category="Varejo" data-pcd="true">
-    <h3 class="job-title">Atendente de Loja</h3>
-    <div class="published-date">Publicado em: 10/11/2024</div>
-    <div class="job-section">
-        <div class="job-label">Localização:</div>
-        <p>Belo Horizonte</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Modalidade:</div>
-        <p>Presencial</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Senioridade:</div>
-        <p>Júnior</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Pretensão Salarial:</div>
-        <p>R$ 2.000,00</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Benefícios:</div>
-        <ul class="job-benefits">
-            <li>Vale Transporte</li>
-            <li>Vale Alimentação</li>
-        </ul>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Tipo de Vaga:</div>
-        <p>CLT</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Categoria:</div>
-        <p>Varejo</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">PCD:</div>
-        <p>Sim</p>
-    </div>
-    <div class="button-wrapper">
-        <button class="apply-button" onclick="openModal('Atendente de Loja')">Candidatar-se</button>
-        <div class="share-icons">
-            <a href="https://wa.me/?text=Confira esta vaga de Atendente de Loja na RHRecruiter" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://rh-recruiter.com" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rh-recruiter.com&title=Confira%20esta%20vaga%20de%20Atendente%20de%20Loja" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram share-icon instagram"></i></a>
-        </div>
-    </div>
-</div>
-
-<!-- Nova Vaga - Desenvolvedor Frontend -->
-<div class="job-detail-content" data-state="PR" data-workmode="Híbrido" data-seniority="Júnior" data-contract="pj" data-category="Tecnologia" data-pcd="false">
-    <h3 class="job-title">Desenvolvedor Frontend</h3>
-    <div class="published-date">Publicado em: 10/11/2024</div>
-    <div class="job-section">
-        <div class="job-label">Localização:</div>
-        <p>Curitiba</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Modalidade:</div>
-        <p>Híbrido</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Senioridade:</div>
-        <p>Júnior</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Pretensão Salarial:</div>
-        <p>R$ 5.500,00</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Benefícios:</div>
-        <ul class="job-benefits">
-            <li>Plano de Saúde</li>
-            <li>Vale Alimentação</li>
-            <li>Auxílio Educação</li>
-        </ul>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Tipo de Vaga:</div>
-        <p>Contrato PJ</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Categoria:</div>
-        <p>Tecnologia</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">PCD:</div>
-        <p>Não</p>
-    </div>
-    <div class="button-wrapper">
-        <button class="apply-button" onclick="openModal('Desenvolvedor Frontend')">Candidatar-se</button>
-        <div class="share-icons">
-            <a href="https://wa.me/?text=Confira esta vaga de Desenvolvedor Frontend na RHRecruiter" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://rh-recruiter.com" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rh-recruiter.com&title=Confira%20esta%20vaga%20de%20Desenvolvedor%20Frontend" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram share-icon instagram"></i></a>
-        </div>
-    </div>
-</div>
-
-<!-- Nova Vaga - Estagiário em Marketing Digital -->
-<div class="job-detail-content" data-state="RJ" data-workmode="Remoto" data-seniority="Júnior" data-contract="internship" data-category="Marketing" data-pcd="false">
-    <h3 class="job-title">Estagiário em Marketing Digital</h3>
-    <div class="published-date">Publicado em: 10/11/2024</div>
-    <div class="job-section">
-        <div class="job-label">Localização:</div>
-        <p>Rio de Janeiro</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Modalidade:</div>
-        <p>Remoto</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Senioridade:</div>
-        <p>Júnior</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Pretensão Salarial:</div>
-        <p>Bolsa de R$ 1.500,00</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Benefícios:</div>
-        <ul class="job-benefits">
-            <li>Horário Flexível</li>
-            <li>Auxílio Internet</li>
-        </ul>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Tipo de Vaga:</div>
-        <p>Estágio</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">Categoria:</div>
-        <p>Marketing</p>
-    </div>
-    <div class="job-section">
-        <div class="job-label">PCD:</div>
-        <p>Não</p>
-    </div>
-    <div class="button-wrapper">
-        <button class="apply-button" onclick="openModal('Estagiário em Marketing Digital')">Candidatar-se</button>
-        <div class="share-icons">
-            <a href="https://wa.me/?text=Confira esta vaga de Estagiário em Marketing Digital na RHRecruiter" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://rh-recruiter.com" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rh-recruiter.com&title=Confira%20esta%20vaga%20de%20Estagiário%20em%20Marketing%20Digital" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram share-icon instagram"></i></a>
-        </div>
-    </div>
-</div>
-
-
-            <!-- Exemplo de vagas com todas as informações requisitadas -->
-            <div class="job-detail-content" data-state="RJ" data-workmode="Híbrido" data-seniority="Pleno" data-contract="pj" data-category="Tecnologia" data-pcd="false">
-                <h3 class="job-title">Desenvolvedor Backend</h3>
-                <div class="published-date">Publicado em: 05/11/2024</div>
-                <div class="job-section">
-                    <div class="job-label">Localização:</div>
-                    <p>Rio de Janeiro</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Modalidade:</div>
-                    <p>Híbrido</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Senioridade:</div>
-                    <p>Pleno</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Salário:</div>
-                    <p>R$ 9.000,00</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Benefícios:</div>
-                    <ul class="job-benefits">
-                        <li>Vale Refeição</li>
-                        <li>Plano de Saúde</li>
-                        <li>Gympass</li>
-                    </ul>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Tipo de Vaga:</div>
-                    <p>Contrato PJ</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Categoria:</div>
-                    <p>Tecnologia</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">PCD:</div>
-                    <p>Não</p>
-                </div>
-                <div class="button-wrapper">
-                    <button class="apply-button" onclick="openModal('Desenvolvedor Backend')">Candidatar-se</button>
-                    <div class="share-icons">
-                        <a href="https://wa.me/?text=Confira esta vaga de Desenvolvedor Backend na RHRecruiter" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://rh-recruiter.com" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rh-recruiter.com&title=Confira%20esta%20vaga%20de%20Desenvolvedor%20Backend" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram share-icon instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Outras vagas adicionadas com base no que solicitou -->
-            <div class="job-detail-content" data-state="SP" data-workmode="Remoto" data-seniority="Sênior" data-contract="clt" data-category="Tecnologia" data-pcd="false">
-                <h3 class="job-title">Analista de Dados</h3>
-                <div class="published-date">Publicado em: 06/11/2024</div>
-                <div class="job-section">
-                    <div class="job-label">Localização:</div>
-                    <p>São Paulo</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Modalidade:</div>
-                    <p>Remoto</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Senioridade:</div>
-                    <p>Sênior</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Salário:</div>
-                    <p>R$ 12.000,00</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Benefícios:</div>
-                    <ul class="job-benefits">
-                        <li>Plano de Saúde</li>
-                        <li>Plano Odontológico</li>
-                        <li>Home Office</li>
-                    </ul>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Tipo de Vaga:</div>
-                    <p>CLT</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">Categoria:</div>
-                    <p>Tecnologia</p>
-                </div>
-                <div class="job-section">
-                    <div class="job-label">PCD:</div>
-                    <p>Não</p>
-                </div>
-                <div class="button-wrapper">
-                    <button class="apply-button" onclick="openModal('Analista de Dados')">Candidatar-se</button>
-                    <div class="share-icons">
-                        <a href="https://wa.me/?text=Confira esta vaga de Analista de Dados na RHRecruiter" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://rh-recruiter.com" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rh-recruiter.com&title=Confira%20esta%20vaga%20de%20Analista%20de%20Dados" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram share-icon instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Adicionar mais 8 vagas de forma similar -->
-
+        <!-- Paginação -->
+        <div class="pagination-wrapper">
+            <button id="prevPage" onclick="changePage(-1)" disabled>Anterior</button>
+            <span id="pageIndicator"></span>
+            <button id="nextPage" onclick="changePage(1)" disabled>Próxima</button>
         </div>
     </div>
 
@@ -472,7 +120,7 @@
             <span class="close-button" onclick="closeModal()">&times;</span>
             <h2>Candidatar-se à Vaga: <span id="modalJobTitle"></span></h2>
             <form id="applyForm" method="POST" action="processar_candidatura.php" enctype="multipart/form-data">
-                <input type="hidden" name="vaga" value="Desenvolvedor Backend">
+                <input type="hidden" name="vaga" id="hiddenJobTitle">
                 <div class="form-field">
                     <label for="name">Nome</label>
                     <input type="text" id="name" name="name" class="input-field" required>
@@ -498,105 +146,178 @@
         </div>
     </div>
 
-    <!-- Rodapé -->
-    <footer class="footer-wrapper">
-        <p>© 2024 RHRecruiter. Todos os direitos reservados.</p>
-    </footer>
+   <!-- Rodapé -->
+<footer class="footer-wrapper">
+    <p>© 2024 RHRecruiter. Todos os direitos reservados.</p>
+</footer>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script>
-        const jobsPerPage = 10;
-        let currentPage = 1;
-        let jobs = Array.from(document.querySelectorAll('.job-detail-content'));
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    const jobsPerPage = 10;
+    let currentPage = 1;
+    let jobs = [];
 
-        // Função para organizar vagas pela data mais recente
-        jobs.sort((a, b) => {
-            const dateA = new Date(a.querySelector('.published-date').textContent.split(': ')[1]);
-            const dateB = new Date(b.querySelector('.published-date').textContent.split(': ')[1]);
-            return dateB - dateA;
+    // Renderizar as vagas ao carregar a página
+    window.onload = async function () {
+        try {
+            const response = await fetch('/vagas_api.php'); // URL da API de vagas
+            if (!response.ok) {
+                throw new Error('Erro ao buscar vagas: ' + response.statusText);
+            }
+
+            const vagas = await response.json();
+
+
+            // Populando as vagas
+            vagas.forEach(vaga => {
+                const vagaElement = document.createElement('div');
+                vagaElement.classList.add('job-detail-content');
+                vagaElement.setAttribute('data-state', vaga.estado);
+                vagaElement.setAttribute('data-workmode', vaga.modalidade);
+                vagaElement.setAttribute('data-seniority', vaga.senioridade);
+                vagaElement.setAttribute('data-contract', vaga.tipo_contrato);
+                vagaElement.setAttribute('data-pcd', vaga.pcd);
+
+                vagaElement.innerHTML = `
+                    <h3 class="job-title">${vaga.titulo}</h3>
+                    <div class="published-date">Publicado em: ${vaga.data_publicacao || 'Data não informada'}</div>
+                    <div class="job-section">
+                        <div class="job-label">Localização:</div>
+                        <p>${vaga.estado}</p>
+                    </div>
+                    <div class="job-section">
+                        <div class="job-label">Modalidade:</div>
+                        <p>${vaga.modalidade}</p>
+                    </div>
+                    <div class="job-section">
+                        <div class="job-label">Senioridade:</div>
+                        <p>${vaga.senioridade}</p>
+                    </div>
+                    <div class="job-section">
+                        <div class="job-label">Tipo de Contrato:</div>
+                        <p>${vaga.tipo_contrato}</p>
+                    </div>
+                    <div class="job-section">
+                        <div class="job-label">Salário:</div>
+                        <p>${vaga.salario ? `R$ ${vaga.salario}` : 'Não especificado'}</p>
+                    </div>
+                    <div class="job-section">
+                        <div class="job-label">Categoria:</div>
+                        <p>${vaga.categoria || 'Não especificado'}</p>
+                    </div>
+                    <div class="job-section">
+                        <div class="job-label">Descrição:</div>
+                        <p>${vaga.descricao}</p>
+                    </div>
+                    <div class="job-section">
+                        <div class="job-label">Requisitos:</div>
+                        <ul class="job-requirements">
+                            ${vaga.requisitos ? vaga.requisitos.split(',').map(req => `<li>${req}</li>`).join('') : 'Não especificado'}
+                        </ul>
+                    </div>
+                    <div class="job-section">
+                        <div class="job-label">Benefícios:</div>
+                        <ul class="job-benefits">
+                            ${vaga.beneficios ? vaga.beneficios.split('\n').map(benefit => `<li>${benefit}</li>`).join('') : 'Não especificado'}
+                        </ul>
+                    </div>
+                    <div class="button-wrapper">
+                        <button class="apply-button" onclick="openModal('${vaga.titulo}')">Candidatar-se</button>
+                        <div class="share-icons">
+                            <a href="https://wa.me/?text=Confira esta vaga: ${vaga.titulo}" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://seusite.com/vaga/${vaga.id}" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://seusite.com/vaga/${vaga.id}&title=${vaga.titulo}" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
+                        </div>
+                    </div>
+                `;
+
+                jobs.push(vagaElement); // Adiciona cada vaga ao array de jobs
+            });
+
+            renderJobs(); // Renderizar as vagas após carregá-las no array jobs
+        } catch (error) {
+            console.error('Erro ao carregar vagas:', error);
+        }
+    };
+
+    function renderJobs() {
+        const jobDetailWrapper = document.getElementById('jobDetailWrapper');
+        jobDetailWrapper.innerHTML = '<h2 class="job-detail-title">Vagas Disponíveis</h2>';
+        const startIndex = (currentPage - 1) * jobsPerPage;
+        const endIndex = startIndex + jobsPerPage;
+        const jobsToDisplay = jobs.slice(startIndex, endIndex);
+
+        jobsToDisplay.forEach(job => {
+            jobDetailWrapper.appendChild(job);
         });
 
-        function renderJobs() {
-            const jobDetailWrapper = document.getElementById('jobDetailWrapper');
-            jobDetailWrapper.innerHTML = '<h2 class="job-detail-title">Vagas Disponíveis</h2>';
-            const startIndex = (currentPage - 1) * jobsPerPage;
-            const endIndex = startIndex + jobsPerPage;
-            const jobsToDisplay = jobs.slice(startIndex, endIndex);
 
-            jobsToDisplay.forEach(job => {
-                jobDetailWrapper.appendChild(job);
-            });
+        updatePagination();
+    }
 
-            updatePagination();
-        }
+    function updatePagination() {
+        const totalPages = Math.ceil(jobs.length / jobsPerPage);
+        document.getElementById('pageIndicator').textContent = `Página ${currentPage} de ${totalPages}`;
+        document.getElementById('prevPage').disabled = currentPage === 1;
+        document.getElementById('nextPage').disabled = currentPage === totalPages;
+    }
 
-        function updatePagination() {
-            const totalPages = Math.ceil(jobs.length / jobsPerPage);
-            document.getElementById('pageIndicator').textContent = `Página ${currentPage} de ${totalPages}`;
-            document.getElementById('prevPage').disabled = currentPage === 1;
-            document.getElementById('nextPage').disabled = currentPage === totalPages;
-        }
+    function changePage(direction) {
+        currentPage += direction;
+        renderJobs();
+    }
 
-        function changePage(direction) {
-            currentPage += direction;
-            renderJobs();
-        }
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('show');
+    }
 
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('show');
-        }
+    function openModal(jobTitle) {
+        document.getElementById('modalJobTitle').innerText = jobTitle;
+        document.getElementById('hiddenJobTitle').value = jobTitle;
+        document.getElementById('applyModal').style.display = 'block';
+    }
 
-        function openModal(jobTitle) {
-            document.getElementById('modalJobTitle').innerText = jobTitle;
-            document.getElementById('applyModal').style.display = 'block';
-        }
+    function closeModal() {
+        document.getElementById('applyModal').style.display = 'none';
+    }
 
-        function closeModal() {
-            document.getElementById('applyModal').style.display = 'none';
-        }
+    function closeResponseModal() {
+        document.getElementById("responseModal").style.display = "none";
+    }
 
-        function closeResponseModal() {
-            document.getElementById("responseModal").style.display = "none";
-        }
+    function applyFilter() {
+        const state = document.getElementById('state').value.toLowerCase();
+        const workModes = Array.from(document.querySelectorAll("input[name='workMode']:checked")).map(input => input.value.toLowerCase());
+        const seniorities = Array.from(document.querySelectorAll("input[name='seniority']:checked")).map(input => input.value.toLowerCase());
+        const contractTypes = [];
+        if (document.querySelector("input[name='clt']:checked")) contractTypes.push('clt');
+        if (document.querySelector("input[name='pj']:checked")) contractTypes.push('pj');
+        if (document.querySelector("input[name='internship']:checked")) contractTypes.push('estágio');
+        if (document.querySelector("input[name='pcd']:checked")) contractTypes.push('pcd');
+        const searchTerm = document.getElementById('searchTerm').value.toLowerCase();
 
+        jobs.forEach(job => {
+            const jobState = job.getAttribute('data-state').toLowerCase();
+            const jobWorkMode = job.getAttribute('data-workmode').toLowerCase();
+            const jobSeniority = job.getAttribute('data-seniority').toLowerCase();
+            const jobContract = job.getAttribute('data-contract').toLowerCase();
+            const jobTitle = job.querySelector('.job-title').innerText.toLowerCase();
 
-        function applyFilter() {
-            const state = document.getElementById('state').value.toLowerCase();
-            const workModes = Array.from(document.querySelectorAll("input[name='workMode']:checked")).map(input => input.value.toLowerCase());
-            const seniorities = Array.from(document.querySelectorAll("input[name='seniority']:checked")).map(input => input.value.toLowerCase());
-            const contractTypes = [];
-            if (document.querySelector("input[name='clt']:checked")) contractTypes.push('clt');
-            if (document.querySelector("input[name='pj']:checked")) contractTypes.push('pj');
-            if (document.querySelector("input[name='internship']:checked")) contractTypes.push('estágio');
-            if (document.querySelector("input[name='pcd']:checked")) contractTypes.push('pcd');
-            const searchTerm = document.getElementById('searchTerm').value.toLowerCase();
+            let matchesFilter = true;
 
-            const jobElements = document.querySelectorAll('.job-detail-content');
+            if (state && jobState !== state) matchesFilter = false;
+            if (workModes.length > 0 && !workModes.includes(jobWorkMode)) matchesFilter = false;
+            if (seniorities.length > 0 && !seniorities.includes(jobSeniority)) matchesFilter = false;
+            if (contractTypes.length > 0 && !contractTypes.includes(jobContract)) matchesFilter = false;
+            if (searchTerm && !jobTitle.includes(searchTerm)) matchesFilter = false;
 
-            jobElements.forEach(job => {
-                const jobState = job.getAttribute('data-state').toLowerCase();
-                const jobWorkMode = job.getAttribute('data-workmode').toLowerCase();
-                const jobSeniority = job.getAttribute('data-seniority').toLowerCase();
-                const jobContract = job.getAttribute('data-contract').toLowerCase();
-                const jobPCD = job.getAttribute('data-pcd').toLowerCase() === 'true';
-                const jobTitle = job.querySelector('.job-title').innerText.toLowerCase();
+            job.style.display = matchesFilter ? "block" : "none";
+        });
 
-                let matchesFilter = true;
-
-                if (state && jobState !== state) matchesFilter = false;
-                if (workModes.length > 0 && !workModes.includes(jobWorkMode)) matchesFilter = false;
-                if (seniorities.length > 0 && !seniorities.includes(jobSeniority)) matchesFilter = false;
-                if (contractTypes.length > 0 && !contractTypes.includes(jobContract) && !(contractTypes.includes('pcd') && jobPCD)) matchesFilter = false;
-                if (searchTerm && !jobTitle.includes(searchTerm)) matchesFilter = false;
-
-                if (matchesFilter) {
-                    job.style.display = "block";
-                } else {
-                    job.style.display = "none";
-                }
-            });
-        }
-    </script>
+        renderJobs();
+    }
+    
+</script>
 </body>
 </html>

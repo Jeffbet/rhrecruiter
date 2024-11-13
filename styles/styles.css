@@ -28,7 +28,7 @@ body, html {
 }
 
 .logo {
-    height: 50px;
+    height: 40px;
     margin-right: 10px;
 }
 
@@ -235,7 +235,7 @@ body, html {
 .marketing-wrapper {
     width: 100%;
     padding: 60px 20px;
-    background: url('/assets/aboutus.jpg') center/cover no-repeat;
+    background: url('/assets/BG home.png') center/cover no-repeat;
     color: #fff;
     text-align: center;
     position: relative;
