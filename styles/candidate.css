@@ -16,7 +16,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px 20px;
     background: #000;
     color: #fff;
     font-weight: bold;
@@ -26,8 +26,6 @@ body, html {
     z-index: 1000;
 }
 
-
-/* Logo and Navigation */
 .logo-wrapper {
     display: flex;
     align-items: center;
@@ -36,7 +34,7 @@ body, html {
 
 .logo {
     height: 40px;
-    margin-right: 10px;
+    margin-right: 350px;
 }
 
 .site-name {
@@ -44,9 +42,12 @@ body, html {
     font-weight: bold;
 }
 
+/* Navigation Links */
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    padding: 10px;
+    align-items: center;
     margin-right: 40px;
 }
 
@@ -54,13 +55,46 @@ body, html {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.nav-link i {
+    font-size: 18px;
 }
 
 .nav-link:hover {
     color: #5da8ae;
 }
 
-/* Hide menu button by default, display for mobile */
+.nav-link:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #5da8ae;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #5da8ae;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Menu Button for Mobile */
 .menu-button {
     display: none;
     background: none;
@@ -74,20 +108,33 @@ body, html {
 @media (max-width: 768px) {
     .menu-button {
         display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .header-wrapper {
+        justify-content: center;
+    }
+
+    .logo-wrapper {
+        justify-content: center;
+        flex: 1;
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
-        position: absolute;
+        align-items: center;
+        gap: 20px;
+        background-color: #000;
+        position: fixed;
         top: 70px;
-        right: 20px;
-        background: rgba(0, 0, 0, 0.9);
-        padding: 10px;
-        border-radius: 5px;
-        width: 80%;
-        z-index: 1001;
+        left: 0;
+        width: 100%;
+        padding: 20px;
     }
+
     .nav-links.show {
         display: flex;
     }
@@ -95,12 +142,23 @@ body, html {
     .nav-link {
         padding: 10px;
         font-size: 20px;
+        text-align: center;
     }
 
     .site-name {
-        font-size: 20px;
+        font-size: 22px;
     }
 }
+
+.filter-button {
+    border-radius: 20px;
+    padding: 8px 10px;
+    background-color: #5da8ae;
+    color: #fff;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
 /* Main Container */
 .container {
     display: flex;
@@ -140,7 +198,6 @@ body, html {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 
 .checkbox-wrapper-horizontal {
     display: flex;
@@ -188,27 +245,26 @@ body, html {
     text-align: center;
 }
 
-
 /* Título Principal da Página */
 .job-detail-title {
-    font-size: 60px; /* Fonte bem maior para destacar o título principal */
+    font-size: 60px;
     font-weight: bold;
-    color: #ffffff; /* Cor branca como na imagem fornecida */
+    color: #ffffff;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .job-detail-content {
     color: #fff;
-    text-align: left; /* Conteúdo da vaga alinhado à esquerda */
-    margin-bottom: 40px; /* Espaçamento entre vagas */
+    text-align: left;
+    margin-bottom: 40px;
 }
 
 /* Título da Vaga */
 .job-title {
-    font-size: 36px; /* Tamanho da fonte aumentado para destacar o título da vaga */
+    font-size: 36px;
     font-weight: bold;
-    color: #5da8ae; /* Cor verde */
+    color: #5da8ae;
     margin-top: 10px;
     text-align: center;
 }
@@ -216,20 +272,20 @@ body, html {
 /* Publicado em */
 .published-date {
     font-size: 12px;
-    color: #cccccc; /* Cor cinza clara para o detalhe da data */
+    color: #cccccc;
     text-align: center;
     margin-top: 5px;
 }
 
 .job-section {
-    margin-bottom: 15px; /* Espaçamento entre seções */
+    margin-bottom: 15px;
 }
 
 .job-section h4 {
     font-size: 22px;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #5da8ae; /* Negrito e um pouco maior que o conteúdo abaixo */
+    color: #5da8ae;
 }
 
 .job-label {
@@ -250,15 +306,6 @@ body, html {
 /* Benefícios como marcadores */
 .job-benefits {
     padding-left: 20px;
-}
-
-/* Separador de vagas */
-.job-separator {
-    border: 5px solid #ffffff;
-    margin: 100px 0;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* Apply Button and Share Buttons */
@@ -285,6 +332,13 @@ body, html {
 .apply-button:hover {
     background: #225E63;
     transform: scale(1.05);
+}
+
+.share-icons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .share-icons {
@@ -323,6 +377,17 @@ body, html {
 
 .share-icon.instagram {
     background-color: #e4405f;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.share-icons-wrapper a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 /* Footer */
@@ -372,7 +437,6 @@ body, html {
 .close-button:hover,
 .close-button:focus {
     color: #fff;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -393,23 +457,7 @@ body, html {
     transform: scale(1.05);
 }
 
-/* Adjust for better mobile responsiveness */
-@media (max-width: 480px) {
-    .header-wrapper {
-        flex-wrap: wrap;
-    }
-
-    .site-name {
-        font-size: 20px;
-        margin-top: 10px;
-    }
-
-    .nav-links {
-        top: 60px;
-    }
-}
-
-/* Conteúdo da paginação */
+/* Pagination Section */
 .pagination-wrapper {
     display: flex;
     justify-content: center;

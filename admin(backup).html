@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdminLTE - Gestão de Vagas</title>
-    <!-- AdminLTE CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/admin.css">
-</head>
-<body class="hold-transition sidebar-mini">
 
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AdminLTE - Gestão de Vagas</title>
+        <!-- AdminLTE CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/admin.css">
+    </head>
+    <body class="hold-transition sidebar-mini">
+    
 <!-- Tela de Login -->
 <div id="loginContainer" class="login-container">
     <div class="login-header">
-        <img src="/assets/LOGO4.png" alt="RHRecruiter Logo" class="login-logo">
+        <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="RHRecruiter Logo" class="login-logo">
         <h1 class="company-name">RHRecruiter</h1>
         <h3 class="sub-title">Recrutamento e Seleção</h3>
     </div>
@@ -33,6 +35,27 @@
         </div>
         <button type="submit" class="submit-button btn btn-primary">Entrar</button>
     </form>
+
+    <script>
+        // usuário e senha para acesso
+        const validUsername = "adminrecruiter";
+        const validPassword = "91085467Jl";
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === validUsername && password === validPassword) {
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+                loadJobs();
+            } else {
+                alert('Usuário ou senha inválidos');
+            }
+        }
+    </script>
+
 </div>
 
 <!-- Painel Administrativo -->
@@ -47,108 +70,60 @@
         <button onclick="handleLogout()" class="btn btn-danger ml-auto">Logout</button>
     </nav>
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <a href="#" class="brand-link">
-            <img src="/assets/LOGO4.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
-            <span class="brand-text font-weight-light">RHRecruiter</span>
-        </a>
-        <div class="sidebar">
-            <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" onclick="showSection('jobSection')">
-                            <i class="nav-icon fas fa-briefcase"></i>
-                            <p>Gerenciar Vagas</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" onclick="showSection('pendingJobsSection')">
-                            <i class="nav-icon fas fa-clock"></i>
-                            <p>Vagas Pendentes</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="candidate.html" class="nav-link">
-                            <i class="nav-icon fas fa-eye"></i>
-                            <p>Visualizar Vagas no Site</p>
-                        </a>
-                    </li>
-                    <li class="nav-item" id="manageUsersMenuItem" style="display: none;">
-                        <a href="#" class="nav-link" onclick="showSection('manageUsersSection')">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>Gerenciar Usuários</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-chart-line"></i>
-                            <p>Relatórios e Estatísticas</p>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </aside>
+
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="#" class="brand-link">
+        <img src="/assets/LOGO4.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+        <span class="brand-text font-weight-light">RHRecruiter</span>
+    </a>
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-briefcase"></i>
+                        <p>Gerenciar Vagas</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="candidate.html" class="nav-link">
+                        <i class="nav-icon fas fa-eye"></i>
+                        <p>Visualizar Vagas no Site</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Gerenciar Usuários</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>Relatórios e Estatísticas</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
 
     <!-- Content Wrapper -->
     <div class="content-wrapper">
-        <!-- Seções do Painel Administrativo -->
-        <section class="content" id="manageUsersSection" style="display: none;">
+        <!-- Content Header -->
+        <div class="content-header">
             <div class="container-fluid">
-                <h2>Gerenciar Usuários</h2>
-                <form id="createUserForm" onsubmit="createUser(event)">
-                    <div class="form-group">
-                        <label for="newUsername">Nome de Usuário</label>
-                        <input type="text" id="newUsername" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="newPassword">Senha</label>
-                        <input type="password" id="newPassword" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Permissões</label>
-                        <div>
-                            <input type="checkbox" id="permCriarVaga" value="criar_vaga"> <label for="permCriarVaga">Criar Vaga</label><br>
-                            <input type="checkbox" id="permEditarVaga" value="editar_vaga"> <label for="permEditarVaga">Editar Vaga</label><br>
-                            <input type="checkbox" id="permVerCandidaturas" value="ver_candidaturas"> <label for="permVerCandidaturas">Ver Candidaturas</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Criar Usuário</button>
-                </form>
-            </div>
-        </section>
-
-        <section class="content" id="pendingJobsSection" style="display: none;">
-            <div class="container-fluid">
-                <h2>Vagas Pendentes de Aprovação</h2>
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Lista de Vagas Pendentes</h3>
-                    </div>
-                    <div class="card-body">
-                        <table id="pendingJobList" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Título</th>
-                                    <th>Estado</th>
-                                    <th>Modalidade</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Vagas serão adicionadas dinamicamente aqui -->
-                            </tbody>
-                        </table>
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Cadastro de Vagas</h1>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-            
         <!-- Main Content -->
- <!-- Seção Principal para Gerenciamento de Vagas -->
-        <section class="content" id="jobSection">
+        <section class="content">
             <div class="container-fluid">
                 <div class="card card-primary">
                     <div class="card-header">
@@ -300,6 +275,160 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<script src="scripts/admin.js"></script>
+<script>
+
+    function handleLogout() {
+        document.getElementById('adminDashboard').style.display = 'none';
+        document.getElementById('loginContainer').style.display = 'block';
+    }
+
+// Aqui vamos integrar o painel AdminLTE com sua API
+// Integrar com a API
+document.addEventListener("DOMContentLoaded", () => {
+    loadJobs();
+});
+
+$("#jobForm").on("submit", function(event) {
+    event.preventDefault();
+
+ // Coletar dados do formulário
+    const jobId = $("#jobId").val();
+    const jobTitle = $("#jobTitle").val();
+    const state = $("#state").val();
+    const workMode = $("#workMode").val();
+    const seniority = $("#seniority").val();
+    const contractType = $("#contractType").val();
+    const salary = $("#salary").val();
+    const benefits = $("#benefits").val();
+    const category = $("#category").val();
+    const description = $("#description").val();
+    const requirements = $("#requirements").val();
+    const pcd = $("#pcd").val();
+
+    const jobData = {
+        id: jobId,
+        jobTitle,
+        state,
+        workMode,
+        seniority,
+        contractType,
+        salary,
+        benefits,
+        category,
+        description,
+        requirements,
+        pcd
+    };
+
+// Se tiver um ID, atualiza. Caso contrário, cria uma nova vaga.
+if (jobId) {
+    $.ajax({
+        url: "/vagas_api.php",
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(jobData),
+        success: function(response) {
+            alert("Vaga atualizada com sucesso!");
+            loadJobs();
+        },
+        error: function(err) {
+            alert("Erro ao atualizar a vaga: " + err.responseText);
+        }
+    });
+} else {
+    $.ajax({
+        url: "/vagas_api.php",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(jobData),
+        success: function(response) {
+            alert("Vaga cadastrada com sucesso!");
+            loadJobs();
+        },
+        error: function(err) {
+            alert("Erro ao cadastrar a vaga: " + err.responseText);
+        }
+    });
+}
+$("#jobForm")[0].reset();
+});
+
+
+
+
+function loadJobs() {
+    $.ajax({
+        url: "/vagas_api.php",
+        method: "GET",
+        success: function(response) {
+            const jobs = response;
+            const jobList = $("#jobList tbody");
+            jobList.empty();
+
+            jobs.forEach((job) => {
+                jobList.append(`
+                    <tr>
+                        <td>${job.titulo}</td>
+                        <td>${job.estado}</td>
+                        <td>${job.modalidade}</td>
+                        <td>${job.senioridade}</td>
+                        <td>${job.tipo_contrato}</td>
+                        <td>${job.salario}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" onclick="editJob(${job.id})">Editar</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteJob(${job.id})">Excluir</button>
+                        </td>
+                    </tr>
+                `);
+            });
+        },
+        error: function(err) {
+            alert("Erro ao carregar as vagas: " + err.responseText);
+        }
+    });
+}
+
+function editJob(id) {
+    $.ajax({
+        url: `/vagas_api.php?id=${id}`,
+        method: "GET",
+        success: function(job) {
+            $("#jobId").val(job.id);
+            $("#jobTitle").val(job.titulo);
+            $("#state").val(job.estado);
+            $("#workMode").val(job.modalidade);
+            $("#seniority").val(job.senioridade);
+            $("#contractType").val(job.tipo_contrato);
+            $("#salary").val(job.salario);
+            $("#benefits").val(job.beneficios);
+            $("#category").val(job.categoria);
+            $("#description").val(job.descricao);
+            $("#requirements").val(job.requisitos);
+            $("#pcd").val(job.pcd);
+        },
+        error: function(err) {
+            alert("Erro ao carregar a vaga: " + err.responseText);
+        }
+    });
+}
+
+function deleteJob(id) {
+    if (confirm("Tem certeza que deseja excluir essa vaga?")) {
+        $.ajax({
+            url: "/vagas_api.php",
+            method: "DELETE",
+            contentType: "application/json",
+            data: JSON.stringify({ id }),
+            success: function(response) {
+                alert("Vaga excluída com sucesso!");
+                loadJobs();
+            },
+            error: function(err) {
+                alert("Erro ao excluir a vaga: " + err.responseText);
+            }
+        });
+    }
+}
+</script>
 </body>
 </html>

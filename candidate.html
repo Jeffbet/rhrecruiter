@@ -12,7 +12,7 @@
     <header class="header-wrapper">
         <div class="logo-wrapper" onclick="location.href='/'">
             <img src="assets/LOGO4.png" alt="RHRecruiter Logo" class="logo">
-            <div class="site-name">RHRecruiter</div>
+            <div class="site-name"></div>
         </div>
         <div id="menuButton" class="menu-button" onclick="toggleMenu()">☰</div>
         <nav id="navLinks" class="nav-links">
@@ -224,9 +224,16 @@
                     <div class="button-wrapper">
                         <button class="apply-button" onclick="openModal('${vaga.titulo}')">Candidatar-se</button>
                         <div class="share-icons">
-                            <a href="https://wa.me/?text=Confira esta vaga: ${vaga.titulo}" target="_blank"><i class="fab fa-whatsapp share-icon whatsapp"></i></a>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://seusite.com/vaga/${vaga.id}" target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://seusite.com/vaga/${vaga.id}&title=${vaga.titulo}" target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
+                            <a href="https://wa.me/?text=Confira esta vaga: ${vaga.titulo}" target="_blank"><i
+                                    class="fab fa-whatsapp share-icon whatsapp"></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://seusite.com/vaga/${vaga.id}"
+                                target="_blank"><i class="fab fa-facebook share-icon facebook"></i></a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://seusite.com/vaga/${vaga.id}&title=${vaga.titulo}"
+                                target="_blank"><i class="fab fa-linkedin share-icon linkedin"></i></a>
+                            <a href="https://www.instagram.com/seuperfil" target="_blank">
+                                <i class="fab fa-instagram share-icon instagram"></i> Compartilhar no Instagram
+                            </a>
+
                         </div>
                     </div>
                 `;
